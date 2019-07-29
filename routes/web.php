@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AlbumController@index');
+
+Route::resource('/album', 'AlbumController');
+Route::resource('/photo', 'PhotoController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
